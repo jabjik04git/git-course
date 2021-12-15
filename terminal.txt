@@ -1,0 +1,239 @@
+
+(C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+PS D:\Development\Git-> git commit -m "Added gitignore"
+[master 0ce38e2] Added gitignore
+ 1 file changed, 2 insertions(+)
+ create mode 100644 .gitignore
+PS D:\Development\Git-> git status
+On branch master
+nothing to commit, working tree clean
+PS D:\Development\Git-> git branch
+* master
+PS D:\Development\Git-> git branch test
+PS D:\Development\Git-> git branch
+* master
+  test
+PS D:\Development\Git-> git branch -D test
+Deleted branch test (was 0ce38e2).
+PS D:\Development\Git-> git branch
+* master
+PS D:\Development\Git-> git branch readme
+PS D:\Development\Git-> git branch
+* master
+  readme
+PS D:\Development\Git-> git checkout readme
+Switched to branch 'readme'
+PS D:\Development\Git-> git status
+On branch readme
+nothing to commit, working tree clean
+PS D:\Development\Git-> git branch
+  master
+* readme
+PS D:\Development\Git-> git checkout master
+Switched to branch 'master'
+PS D:\Development\Git-> git branch
+* master
+  readme
+PS D:\Development\Git-> git checkout -b new
+Switched to a new branch 'new'
+PS D:\Development\Git-> git branch
+  master
+* new
+  readme
+PS D:\Development\Git-> git checkout readme
+Switched to branch 'readme'
+PS D:\Development\Git-> git branck
+git: 'branck' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+PS D:\Development\Git-> git branch
+  master
+  new
+* readme
+PS D:\Development\Git-> git checkout master
+Switched to branch 'master'
+PS D:\Development\Git-> git branch -D new
+Deleted branch new (was 0ce38e2).
+PS D:\Development\Git-> git checkout master
+Already on 'master'
+PS D:\Development\Git-> git branc
+git: 'branc' is not a git command. See 'git --help'.
+PS D:\Development\Git-> git branch
+* master
+  readme
+PS D:\Development\Git-> git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        readme.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\Development\Git-> git add .
+PS D:\Development\Git-> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   readme.md
+
+PS D:\Development\Git-> git commit -m "created file readme.md"
+[master cff4ed6] created file readme.md
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 readme.md
+PS D:\Development\Git-> git status
+On branch master
+nothing to commit, working tree clean
+PS D:\Development\Git-> git checkout readme
+Switched to branch 'readme'
+PS D:\Development\Git-> git status
+On branch readme
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        readme.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\Development\Git-> git branch master
+fatal: A branch named 'master' already exists.
+PS D:\Development\Git-> git checkout master
+error: The following untracked working tree files would be overwritten by checkout:
+        readme.md
+Please move or remove them before you switch branches.
+Aborting
+PS D:\Development\Git-> git status
+On branch readme
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        readme.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\Development\Git-> git add .
+PS D:\Development\Git-> git checkout master
+error: Your local changes to the following files would be overwritten by checkout:
+        readme.md
+Please commit your changes or stash them before you switch branches.
+Aborting
+PS D:\Development\Git-> git commit -m "Created file readme.md"
+[readme 1df795c] Created file readme.md
+ 1 file changed, 2 insertions(+)
+ create mode 100644 readme.md
+PS D:\Development\Git-> git checkout master
+Switched to branch 'master'
+PS D:\Development\Git-> git branch readme
+fatal: A branch named 'readme' already exists.
+PS D:\Development\Git-> git checkout readme
+Switched to branch 'readme'
+PS D:\Development\Git-> git commit -m "Created file main.css"
+On branch readme
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        main.css
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\Development\Git-> git add .
+PS D:\Development\Git-> git commit -m "Created file main.css"
+[readme 59b2809] Created file main.css
+ 1 file changed, 3 insertions(+)
+ create mode 100644 main.css
+PS D:\Development\Git-> git checkout master
+Switched to branch 'master'
+PS D:\Development\Git-> git checkout readme
+Switched to branch 'readme'
+PS D:\Development\Git-> git checkout master
+Switched to branch 'master'
+PS D:\Development\Git-> git branch
+* master
+  readme
+PS D:\Development\Git-> git checkout readme
+Switched to branch 'readme'
+PS D:\Development\Git-> git checkout master
+Switched to branch 'master'
+PS D:\Development\Git-> git merge readme
+Auto-merging readme.md
+Merge made by the 'ort' strategy.
+ main.css  | 3 +++
+ readme.md | 2 ++
+ 2 files changed, 5 insertions(+)
+ create mode 100644 main.css
+PS D:\Development\Git-> git checkout readme
+Switched to branch 'readme'
+PS D:\Development\Git-> git checkout master
+Switched to branch 'master'
+PS D:\Development\Git-> git branch -D readme
+Deleted branch readme (was 59b2809).
+PS D:\Development\Git-> git status
+On branch master
+nothing to commit, working tree clean
+PS D:\Development\Git-> git config --global user.name
+jabjik04git
+PS D:\Development\Git-> git config --global user.email
+jabjik1984@gmail.com
+PS D:\Development\Git-> git remote add origin https://github.com/jabjik04git/git-course.git
+PS D:\Development\Git-> git push -u origin master
+info: please complete authentication in your browser...
+Enumerating objects: 17, done.
+Counting objects: 100% (17/17), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (17/17), 1.61 KiB | 824.00 KiB/s, done.
+Total 17 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), done.
+To https://github.com/jabjik04git/git-course.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+PS D:\Development\Git-> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   scripts.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\Development\Git-> git add scripts.js
+PS D:\Development\Git-> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   scripts.js
+
+PS D:\Development\Git-> git commit -m "added console.log"
+[master 7f725bb] added console.log
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+PS D:\Development\Git-> git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 332 bytes | 332.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/jabjik04git/git-course.git
+   9c9a6a1..7f725bb  master -> master
+PS D:\Development\Git->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
